@@ -2,7 +2,7 @@ package prograi;
 
 import static java.lang.Math. *; 
 
-public class CalculadoraEspecial {
+public class CalculadoraEspecial extends Calculadora{
     private String tipoCalculadora;
     private int numeroDeTeclas;
 
@@ -34,20 +34,38 @@ public class CalculadoraEspecial {
     public void setNumeroDeTeclas(int numeroDeTeclas) {
         this.numeroDeTeclas = numeroDeTeclas;
     }
-     public double mathCeil (double operador1){
-        return Math.ceil (operador1);
+    
+    
+    
+     public double mathCeil (double primerNumero){
+         double resultado = Math.ceil(primerNumero);
+         this.registrarTransaccion("entero más cercano por arriba.", primerNumero, resultado, resultado);
+        return resultado;
      }
-     public double mathFloor (double operador2){
-         return Math.floor (operador2);
+     public double mathFloor (double segundoNumero){
+         double resultado = Math.floor (segundoNumero);
+         this.registrarTransaccion("entero más cercano por debajo.", segundoNumero, resultado, resultado);
+         return resultado;
      }
-     public double mathPow (double operador1, double operador2){
-         return Math.pow (operador1, operador2);
+     public double mathPow (double primerNumero, double segundoNumero){
+         double resultado = Math.pow (primerNumero, segundoNumero);
+        this.registrarTransaccion("Potencia", primerNumero, segundoNumero, resultado);
+        return resultado;
+        
      }
-    public double mathMax (double operador1, double operador2){
-         return Math.max (operador1, operador2);
+    public double mathMax (double primerNumero, double segundoNumero){
+         double resultado = Math.max (primerNumero, segundoNumero);
+        this.registrarTransaccion("Mayor", primerNumero, segundoNumero, resultado);
+        return resultado;
+         
      }
-    public double mathSqrt (double operador1){
-        return Math.sqrt(operador1);
+    public double mathSqrt (double primerNumero){
+        double resultado = Math.sqrt(primerNumero);
+         this.registrarTransaccion("raiz cuadrada", primerNumero, resultado, resultado);
+        return resultado;
     }
+    
+    
+    
     }
     
